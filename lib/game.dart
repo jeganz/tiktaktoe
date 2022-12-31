@@ -356,9 +356,37 @@ class _gamescreenState extends State<gamescreen> {
                     SizedBox(height: 20),
                     InkWell(
                       onTap: () {
-                        setState(() {
-                          reset();
-                        });
+                        showDialog(
+                            context: context,
+                            builder: ((context) {
+                              return AlertDialog(
+                                backgroundColor: Colors.amber.shade600,
+                                title: Text(
+                                  ' ARE U SURE?',
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                actions: [
+                                  IconButton(
+                                    onPressed: (() {
+                                      Navigator.pop(context);
+                                      setState(() {
+                                        reset();
+                                      });
+                                    }),
+                                    icon: Icon(Icons.check),
+                                    iconSize: 40,
+                                  ),
+                                  IconButton(
+                                      onPressed: (() {
+                                        Navigator.pop(context);
+                                      }),
+                                      icon: Icon(Icons.close),
+                                      iconSize: 40)
+                                ],
+                              );
+                            }));
                       },
                       child: Container(
                         width: 70,
@@ -445,15 +473,30 @@ wincheck(BuildContext context) {
     callalert(context, s3);
   }
   if (!win &&
-      s1 != '  ' &&
-      s2 != '  ' &&
-      s3 != '  ' &&
-      s4 != '  ' &&
-      s5 != '  ' &&
-      s6 != '  ' &&
-      s7 != '  ' &&
-      s8 != '  ' &&
-      s9 != '  ') {}
+      s1 != '   ' &&
+      s2 != '   ' &&
+      s3 != '   ' &&
+      s4 != '   ' &&
+      s5 != '   ' &&
+      s6 != '   ' &&
+      s7 != '   ' &&
+      s8 != '   ' &&
+      s9 != '   ') {
+    showDialog(
+        context: context,
+        builder: ((context) {
+          return AlertDialog(
+            backgroundColor: Colors.amber.shade600,
+            title: Lottie.asset('assets/trophy.json', repeat: false),
+            content: Text(
+              'Nobody won ',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.josefinSans(fontSize: 30),
+            ),
+          );
+        }));
+    r = 'Press restart to play again';
+  }
 }
 
 void disablebutton() {
@@ -462,7 +505,7 @@ void disablebutton() {
 
 void reset() {
   s1 = s2 = s3 = s4 = s5 = s6 = s7 = s8 = s9 = '   ';
-  b1 = b2 = b3 = b4 = b5 = b6 = b7 = b8 = b9 = false;
+  b1 = b2 = b3 = b4 = b5 = b6 = b7 = b8 = b9 = win = false;
   r = '';
 }
 
