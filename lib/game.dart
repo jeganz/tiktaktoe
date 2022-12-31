@@ -366,117 +366,101 @@ class _gamescreenState extends State<gamescreen> {
 }
 
 wincheck(BuildContext context) {
-  if (s1 != '   ' && s2 != '   ' && s3 != '   ') {
-    if (s1 == s2 && s2 == s3) {
-      showDialog(
-          context: context,
-          builder: ((context) {
-            return AlertDialog(
-              backgroundColor: Colors.amberAccent,
-              title: Text('YAAAAH'),
-              content: Text('$s3 won '),
-            );
-          }));
-      disablebutton();
-    }
+  if (s1 != '   ' && s1 == s2 && s2 == s3) {
+    showDialog(
+        context: context,
+        builder: ((context) {
+          return AlertDialog(
+            backgroundColor: Colors.amberAccent,
+            title: Text('YAAAAH'),
+            content: Text('$s3 won '),
+          );
+        }));
+    disablebutton();
   }
-  if (s4 != '   ' && s5 != '   ' && s6 != '   ') {
-    if (s4 == s5 && s5 == s6) {
-      showDialog(
-          context: context,
-          builder: ((context) {
-            return AlertDialog(
-              backgroundColor: Colors.amberAccent,
-              title: Text('YAAAAH'),
-              content: Text('$s6 won '),
-            );
-          }));
-      disablebutton();
-    }
+  if (s4 != '   ' && s4 == s5 && s5 == s6) {
+    showDialog(
+        context: context,
+        builder: ((context) {
+          return AlertDialog(
+            backgroundColor: Colors.amberAccent,
+            title: Text('YAAAAH'),
+            content: Text('$s6 won '),
+          );
+        }));
+    disablebutton();
   }
-  if (s7 != '   ' && s8 != '   ' && s9 != '   ') {
-    if (s7 == s8 && s8 == s9) {
-      showDialog(
-          context: context,
-          builder: ((context) {
-            return AlertDialog(
-              backgroundColor: Colors.amberAccent,
-              title: Text('YAAAAH'),
-              content: Text('$s9 won '),
-            );
-          }));
-      disablebutton();
-    }
+  if (s7 != '   ' && s7 == s8 && s8 == s9) {
+    showDialog(
+        context: context,
+        builder: ((context) {
+          return AlertDialog(
+            backgroundColor: Colors.amberAccent,
+            title: Text('YAAAAH'),
+            content: Text('$s9 won '),
+          );
+        }));
+    disablebutton();
   }
-  if (s7 != '   ' && s5 != '   ' && s3 != '   ') {
-    if (s7 == s5 && s5 == s3) {
-      showDialog(
-          context: context,
-          builder: ((context) {
-            return AlertDialog(
-              backgroundColor: Colors.amberAccent,
-              title: Text('YAAAAH'),
-              content: Text('$s3 won '),
-            );
-          }));
-      disablebutton();
-    }
+  if (s7 != '   ' && s7 == s5 && s5 == s3) {
+    showDialog(
+        context: context,
+        builder: ((context) {
+          return AlertDialog(
+            backgroundColor: Colors.amberAccent,
+            title: Text('YAAAAH'),
+            content: Text('$s3 won '),
+          );
+        }));
+    disablebutton();
   }
-  if (s1 != '   ' && s5 != '   ' && s9 != '   ') {
-    if (s1 == s5 && s5 == s9) {
-      showDialog(
-          context: context,
-          builder: ((context) {
-            return AlertDialog(
-              backgroundColor: Colors.amberAccent,
-              title: Text('YAAAAH'),
-              content: Text('$s1 won '),
-            );
-          }));
-      disablebutton();
-    }
+  if (s1 != '   ' && s1 == s5 && s5 == s9) {
+    showDialog(
+        context: context,
+        builder: ((context) {
+          return AlertDialog(
+            backgroundColor: Colors.amberAccent,
+            title: Text('YAAAAH'),
+            content: Text('$s1 won '),
+          );
+        }));
+    disablebutton();
   }
-  if (s1 != '   ' && s4 != '   ' && s7 != '   ') {
-    if (s1 == s4 && s4 == s7) {
-      showDialog(
-          context: context,
-          builder: ((context) {
-            return AlertDialog(
-              backgroundColor: Colors.amberAccent,
-              title: Text('YAAAAH'),
-              content: Text('$s1 won '),
-            );
-          }));
-      disablebutton();
-    }
+  if (s1 != '   ' && s1 == s4 && s4 == s7) {
+    showDialog(
+        context: context,
+        builder: ((context) {
+          return AlertDialog(
+            backgroundColor: Colors.amberAccent,
+            title: Text('YAAAAH'),
+            content: Text('$s1 won '),
+          );
+        }));
+    disablebutton();
   }
-  if (s2 != '   ' && s5 != '   ' && s8 != '   ') {
-    if (s2 == s5 && s5 == s8) {
-      showDialog(
-          context: context,
-          builder: ((context) {
-            return AlertDialog(
-              backgroundColor: Colors.amberAccent,
-              title: Text('YAAAAH'),
-              content: Text('$s5 won '),
-            );
-          }));
-      disablebutton();
-    }
+  if (s2 != '   ' && s2 == s5 && s5 == s8) {
+    showDialog(
+        context: context,
+        builder: ((context) {
+          return AlertDialog(
+            backgroundColor: Colors.amberAccent,
+            title: Text('YAAAAH'),
+            content: Text('$s5 won '),
+          );
+        }));
+    disablebutton();
   }
-  if (s3 != '   ' && s6 != '   ' && s9 != '   ') {
-    if (s3 == s6 && s6 == s9) {
-      showDialog(
-          context: context,
-          builder: ((context) {
-            return AlertDialog(
-              backgroundColor: Colors.amberAccent,
-              title: Text('YAAAAH'),
-              content: Text('$s9 won '),
-            );
-          }));
-      disablebutton();
-    }
+  if (s3 != '   ' && s3 == s6 && s6 == s9) {
+    showDialog(
+        context: context,
+        builder: ((context) {
+          return AlertDialog(
+            backgroundColor: Colors.amberAccent,
+            title: Text('YAAAAH'),
+            content: Text('$s9 won '),
+          );
+        }));
+    disablebutton();
   }
 }
 
