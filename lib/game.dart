@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 class gamescreen extends StatefulWidget {
   const gamescreen({super.key});
@@ -29,7 +31,8 @@ bool b1 = false,
     b6 = false,
     b7 = false,
     b8 = false,
-    b9 = false;
+    b9 = false,
+    win = false;
 
 class _gamescreenState extends State<gamescreen> {
   @override
@@ -329,8 +332,7 @@ class _gamescreenState extends State<gamescreen> {
               InkWell(
                 onTap: () {
                   setState(() {
-                    s1 = s2 = s3 = s4 = s5 = s6 = s7 = s8 = s9 = '   ';
-                    b1 = b2 = b3 = b4 = b5 = b6 = b7 = b8 = b9 = false;
+                    reset();
                   });
                 },
                 child: Container(
@@ -367,103 +369,63 @@ class _gamescreenState extends State<gamescreen> {
 
 wincheck(BuildContext context) {
   if (s1 != '   ' && s1 == s2 && s2 == s3) {
-    showDialog(
-        context: context,
-        builder: ((context) {
-          return AlertDialog(
-            backgroundColor: Colors.amberAccent,
-            title: Text('YAAAAH'),
-            content: Text('$s3 won '),
-          );
-        }));
-    disablebutton();
+    callalert(context, s3);
   }
   if (s4 != '   ' && s4 == s5 && s5 == s6) {
-    showDialog(
-        context: context,
-        builder: ((context) {
-          return AlertDialog(
-            backgroundColor: Colors.amberAccent,
-            title: Text('YAAAAH'),
-            content: Text('$s6 won '),
-          );
-        }));
-    disablebutton();
+    callalert(context, s6);
   }
   if (s7 != '   ' && s7 == s8 && s8 == s9) {
-    showDialog(
-        context: context,
-        builder: ((context) {
-          return AlertDialog(
-            backgroundColor: Colors.amberAccent,
-            title: Text('YAAAAH'),
-            content: Text('$s9 won '),
-          );
-        }));
-    disablebutton();
+    callalert(context, s9);
   }
   if (s7 != '   ' && s7 == s5 && s5 == s3) {
-    showDialog(
-        context: context,
-        builder: ((context) {
-          return AlertDialog(
-            backgroundColor: Colors.amberAccent,
-            title: Text('YAAAAH'),
-            content: Text('$s3 won '),
-          );
-        }));
-    disablebutton();
+    callalert(context, s3);
   }
   if (s1 != '   ' && s1 == s5 && s5 == s9) {
-    showDialog(
-        context: context,
-        builder: ((context) {
-          return AlertDialog(
-            backgroundColor: Colors.amberAccent,
-            title: Text('YAAAAH'),
-            content: Text('$s1 won '),
-          );
-        }));
-    disablebutton();
+    callalert(context, s1);
   }
   if (s1 != '   ' && s1 == s4 && s4 == s7) {
-    showDialog(
-        context: context,
-        builder: ((context) {
-          return AlertDialog(
-            backgroundColor: Colors.amberAccent,
-            title: Text('YAAAAH'),
-            content: Text('$s1 won '),
-          );
-        }));
-    disablebutton();
+    callalert(context, s7);
   }
   if (s2 != '   ' && s2 == s5 && s5 == s8) {
-    showDialog(
-        context: context,
-        builder: ((context) {
-          return AlertDialog(
-            backgroundColor: Colors.amberAccent,
-            title: Text('YAAAAH'),
-            content: Text('$s5 won '),
-          );
-        }));
-    disablebutton();
+    callalert(context, s5);
   }
   if (s3 != '   ' && s3 == s6 && s6 == s9) {
-    showDialog(
-        context: context,
-        builder: ((context) {
-          return AlertDialog(
-            backgroundColor: Colors.amberAccent,
-            title: Text('YAAAAH'),
-            content: Text('$s9 won '),
-          );
-        }));
-    disablebutton();
+    callalert(context, s3);
   }
+  if (!win &&
+      s1 != '  ' &&
+      s2 != '  ' &&
+      s3 != '  ' &&
+      s4 != '  ' &&
+      s5 != '  ' &&
+      s6 != '  ' &&
+      s7 != '  ' &&
+      s8 != '  ' &&
+      s9 != '  ') {}
 }
 
 void disablebutton() {
-  b1 = b2 = b3 = b4 = b5 = b6 = b7 = b8 = b9 = true;
+  b1 = b2 = b3 = b4 = b5 = b6 = b7 = b8 = b9 = win = true;
+}
+
+void reset() {
+  s1 = s2 = s3 = s4 = s5 = s6 = s7 = s8 = s9 = '   ';
+  b1 = b2 = b3 = b4 = b5 = b6 = b7 = b8 = b9 = false;
+}
+
+void callalert(BuildContext context, String st) {
+  showDialog(
+      context: context,
+      builder: ((context) {
+        return AlertDialog(
+          backgroundColor: Colors.amber.shade600,
+          title: Lottie.asset('assets/trophy.json', repeat: false),
+          content: Text(
+            '$st won ',
+            textAlign: TextAlign.center,
+            style: GoogleFonts.josefinSans(fontSize: 30),
+          ),
+        );
+      }));
+  disablebutton();
 }
