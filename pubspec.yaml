@@ -33,7 +33,7 @@ dependencies:
     sdk: flutter
   lottie: ^2.1.0
   google_fonts: ^3.0.1
-
+  font_awesome_flutter: ^10.3.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -65,6 +65,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
      - assets/trophy.json
+     - assets/toe.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

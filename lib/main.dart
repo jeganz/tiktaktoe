@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tiktaktoe/game.dart';
+import 'package:tiktaktoe/startpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.amber,
       ),
-      home: const gamescreen(),
+      home: const start(),
     );
   }
 }

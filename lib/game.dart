@@ -45,6 +45,19 @@ class _gamescreenState extends State<gamescreen> {
         child: Center(
           child: Column(
             children: [
+              Row(
+                children: [
+                  SizedBox(
+                    height: 10,
+                  ),
+                  IconButton(
+                      iconSize: 35,
+                      onPressed: (() {
+                        Navigator.of(context).pop();
+                      }),
+                      icon: Icon(Icons.arrow_back_ios_rounded))
+                ],
+              ),
               Expanded(
                 child: Container(
                   child: Center(
